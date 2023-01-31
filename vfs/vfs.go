@@ -676,6 +676,10 @@ func (vfs *VFS) Mkdir(name string, perm os.FileMode) error {
 // to the root.
 func (vfs *VFS) mkdirAll(name string, perm os.FileMode) (dir *Dir, err error) {
 	name = strings.Trim(name, "/")
+	// the root directory node already exists even if the directory isn't created yet
+	if name == "" {
+		return vfs.root, nil
+	}
 	var parent, leaf string
 	dir, leaf, err = vfs.StatParent(name)
 	if err == ENOENT && name != "" {
