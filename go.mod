@@ -103,6 +103,7 @@ require (
 	github.com/jcmturner/gofork v1.7.6 // indirect
 	github.com/jcmturner/goidentity/v6 v6.0.1 // indirect
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
+	github.com/jlaffaye/ftp v0.1.1-0.20230208164641-9e39e2c40683 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/jtolio/eventkit v0.0.0-20221004135224-074cf276595b // indirect
 	github.com/klauspost/cpuid/v2 v2.0.12 // indirect
