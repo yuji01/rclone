@@ -5542,7 +5542,7 @@ func (o *Object) Update(ctx context.Context, in io.Reader, src fs.ObjectInfo, op
 	o.setMetaData(head)
 
 	// Check multipart upload ETag if required
-	if o.fs.opt.UseMultipartEtag.Value && !o.fs.etagIsNotMD5 && wantETag != "" && head.ETag != nil && *head.ETag != "" {
+	if o.fs.opt.UseMultipartEtag.Value /*&& !o.fs.etagIsNotMD5*/ && wantETag != "" && head.ETag != nil && *head.ETag != "" {
 		gotETag := strings.Trim(strings.ToLower(*head.ETag), `"`)
 		if wantETag != gotETag {
 			return fmt.Errorf("multipart upload corrupted: Etag differ: expecting %s but got %s", wantETag, gotETag)
